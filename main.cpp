@@ -7,16 +7,23 @@ int main() {
     std::cout << "Capacidade inicial: " << list.capacity() << std::endl;
     std::cout << "Tamanho inicial: " << list.size() << std::endl;
     // std::cout << "Percentual ocupado: " << list.percent_occupied() * 100 << "%" << std::endl;
-    list.push_back(5);
+    list.push_back(2);
     std::cout << "Tamanho atual: " << list.size() << std::endl;
-    list.push_back(5);
+    list.push_back(3);
     std::cout << "Tamanho atual: " << list.size() << std::endl;
-    list.push_back(6);
+    list.push_back(4);
     std::cout << "Tamanho atual: " << list.size() << std::endl;
-    list.push_front(3);
+    list.push_front(1);
     std::cout << "Tamanho atual: " << list.size() << std::endl;
     std::cout << "Capacidade atual: " << list.capacity() << std::endl;
-    std::cout << "Indice do valor 6:  " << list.find(6) << std::endl;
+    std::cout << "Primeiro elemento: " << list.front() << std::endl;
+    std::cout << "Ultimo elemento: " << list.back() << std::endl;
+    list.pop_back();
+    list.pop_front();
+    std::cout << "Primeiro elemento: " << list.front() << std::endl;
+    std::cout << "Ultimo elemento: " << list.back() << std::endl;
+    std::cout << "Tamanho atual: " << list.size() << std::endl;
+    
 
     return 0; // Ao final, o destrutor será chamado automaticamente
 }

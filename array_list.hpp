@@ -20,6 +20,8 @@ public:
     int get_at(unsigned int index);    // Retorna o elemento do indice escolhido
     void push_back(int value);         // Adiciona um elemento no final do array
     void push_front(int value);        // Adiciona um elemento no inicio do array
+    bool pop_back();                   // Remove o último elemento
+    bool pop_front();                  // Remove o primeiro elemento
     int back();                        // Retorna o último elemento
     int front();                       // Retorna o primeiro elemento 
     int count(int value);              // Retorna a quantidade de ocorrencias de um valor

@@ -65,6 +65,27 @@ void array_list::push_front(int value){
     this->size_ = this->size_ + 1;
 }
 
+// Remove o último elemento
+bool array_list::pop_back(){
+    if (this->size_==0){
+        return false;
+    } 
+    this->size_--;
+    return true;
+}
+
+// Remove o primeiro elemento
+bool array_list::pop_front(){
+    if (this->size_==0){
+        return false;
+    }
+    for (unsigned int i = 1; i<this->size_; i++)
+        data[i-1] = data[i];
+
+    this->size_--;
+    return true;
+}
+
 // Irá retornar o último elemento do array
 int array_list::back(){
     return data[this->size_-1];
