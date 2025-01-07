@@ -15,7 +15,7 @@ array_list::~array_list() {
 // Caso o size_ seja igual ao capacity_ será chamada e irá aumentar o tamanho do array
 void array_list::increase_capacity(){
     int * new_data = new int[this->capacity_+10];
-    for (unsigned int i=0; i<this->size_; ++i)
+    for (unsigned int i=0; i<this->size_; ++i)      // O(n)
         new_data[i] = data[i];
     delete [] this->data;
     this->data = new_data;
@@ -38,6 +38,7 @@ double array_list::percent_occupied() const {
     return static_cast<double>(this->size_) / this->capacity_;
 }
 
+// Irá retornar o elemento do indíce escolhido
 int array_list::get_at(unsigned int index){
     return data[index];
 }
@@ -51,14 +52,47 @@ void array_list::push_back(int value){
     this->size_ = this->size_ + 1;
 }
 
+// Irá adicionar no inicio do array um elemento
 void array_list::push_front(int value){
     if (this->size_==this->capacity_)
         increase_capacity();
     
-    for (unsigned int i = this->size_; i>0; --i)
-        data[i] = data[i-1];
+    for (unsigned int i = this->size_; i>0; --i)    // O(n)
+        data[i] = data[i-1];                    
     
     data[0] = value;
 
     this->size_ = this->size_ + 1;
+}
+
+// Irá retornar o último elemento do array
+int array_list::back(){
+    return data[this->size_-1];
+}
+
+// Irá retornar o primeiro elemento do array
+int array_list::front(){
+    return data[0];
+}
+
+// Retorna a quantidade de ocorrencias de um valor
+int array_list::count(int value){
+    int ocorrencias = 0;
+
+    for (unsigned int i = 0; i<this->size_; i++){
+        if (value==data[i])
+            ocorrencias++;
+    }
+
+    return ocorrencias;
+}
+
+int array_list::find(int value){
+    for (unsigned int i = 0; i<this->size_; i++){
+        if (value==data[i]){
+            return i;
+            break;
+        }
+    }
+    return -1;
 }

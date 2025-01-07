@@ -11,13 +11,12 @@ int main() {
     std::cout << "Tamanho atual: " << list.size() << std::endl;
     list.push_back(5);
     std::cout << "Tamanho atual: " << list.size() << std::endl;
-    list.push_back(5);
+    list.push_back(6);
     std::cout << "Tamanho atual: " << list.size() << std::endl;
     list.push_front(3);
     std::cout << "Tamanho atual: " << list.size() << std::endl;
     std::cout << "Capacidade atual: " << list.capacity() << std::endl;
-    std::cout << "Primeiro elemento: " << list.get_at(0) << std::endl;
-    std::cout << "Segundo elemento: " << list.get_at(1) << std::endl;
+    std::cout << "Indice do valor 6:  " << list.find(6) << std::endl;
 
     return 0; // Ao final, o destrutor será chamado automaticamente
 }
