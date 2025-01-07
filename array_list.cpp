@@ -38,6 +38,37 @@ double array_list::percent_occupied() const {
     return static_cast<double>(this->size_) / this->capacity_;
 }
 
+// Insere o value no indice index
+bool array_list::insert_at(unsigned int index, int value){
+    if (index>this->size_){
+        return false;
+    }
+
+    if (this->size_==this->capacity_)
+        increase_capacity();
+
+
+    for (unsigned int i = this->size_; i>index ; i--)
+        data[i]=data[i-1];
+
+    data[index]=value;
+
+    this->size_++;
+    return true;
+}
+
+// Remove o elemento do indice index
+bool array_list::remove_at(unsigned int index){
+    if(this->size_==0){
+        return false;
+    }
+    for (unsigned int i = index; i<this->size_-1; i++)  //O(n)
+        data[i] = data[i+1];
+    
+    this->size_--;
+    return true;
+}
+
 // Irá retornar o elemento do indíce escolhido
 int array_list::get_at(unsigned int index){
     return data[index];
@@ -79,7 +110,7 @@ bool array_list::pop_front(){
     if (this->size_==0){
         return false;
     }
-    for (unsigned int i = 1; i<this->size_; i++)
+    for (unsigned int i = 1; i<this->size_; i++)    //O(nn)
         data[i-1] = data[i];
 
     this->size_--;
@@ -100,7 +131,7 @@ int array_list::front(){
 int array_list::count(int value){
     int ocorrencias = 0;
 
-    for (unsigned int i = 0; i<this->size_; i++){
+    for (unsigned int i = 0; i<this->size_; i++){   //O(n)
         if (value==data[i])
             ocorrencias++;
     }
@@ -109,11 +140,19 @@ int array_list::count(int value){
 }
 
 int array_list::find(int value){
-    for (unsigned int i = 0; i<this->size_; i++){
+    for (unsigned int i = 0; i<this->size_; i++){   //O(n)
         if (value==data[i]){
             return i;
             break;
         }
     }
     return -1;
+}
+
+int array_list::sum(){
+    int soma = 0;
+    for(unsigned int i = 0; i<this->size_; i++)     //O(n)
+        soma = soma + data[i];
+    
+    return soma;
 }

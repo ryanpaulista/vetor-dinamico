@@ -16,12 +16,8 @@ int main() {
     list.push_front(1);
     std::cout << "Tamanho atual: " << list.size() << std::endl;
     std::cout << "Capacidade atual: " << list.capacity() << std::endl;
-    std::cout << "Primeiro elemento: " << list.front() << std::endl;
     std::cout << "Ultimo elemento: " << list.back() << std::endl;
-    list.pop_back();
-    list.pop_front();
-    std::cout << "Primeiro elemento: " << list.front() << std::endl;
-    std::cout << "Ultimo elemento: " << list.back() << std::endl;
+    list.insert_at(3, 99);
     std::cout << "Tamanho atual: " << list.size() << std::endl;
     
 
