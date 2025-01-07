@@ -16,8 +16,10 @@ public:
     // Métodos básicos
     unsigned int size() const;         // Retorna o número de elementos no vetor
     unsigned int capacity() const;     // Retorna a capacidade total do vetor
-    double percent_occupied() const;  // Percentual da capacidade ocupada
+    double percent_occupied() const;   // Percentual da capacidade ocupada
+    int get_at(unsigned int index);
     void push_back(int value);
+    void push_front(int value);
 
 };
 

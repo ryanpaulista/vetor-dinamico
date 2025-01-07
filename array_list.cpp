@@ -1,5 +1,5 @@
-#include "array_list.hpp" // Inclui o cabeçalho
-#include <iostream>       // Apenas para depuração (opcional)
+#include "array_list.hpp" 
+#include <iostream>       
 
 // Construtor
 array_list::array_list(unsigned int initial_capacity)
@@ -24,18 +24,22 @@ void array_list::increase_capacity(){
 
 // Retorna o número de elementos armazenados
 unsigned int array_list::size() const {
-    return size_;
+    return this->size_;
 }
 
 // Retorna a capacidade total do array
 unsigned int array_list::capacity() const {
-    return capacity_;
+    return this->capacity_;
 }
 
 // Retorna o percentual de ocupação (0.0 a 1.0)
 double array_list::percent_occupied() const {
-    if (capacity_ == 0) return 0.0; // Evita divisão por zero
-    return static_cast<double>(size_) / capacity_;
+    if (this->capacity_ == 0) return 0.0; // Evita divisão por zero
+    return static_cast<double>(this->size_) / this->capacity_;
+}
+
+int array_list::get_at(unsigned int index){
+    return data[index];
 }
 
 // Irá adicionar no final do array um valor
@@ -44,5 +48,17 @@ void array_list::push_back(int value){
         increase_capacity();
     
     this->data[this->size_] = value;
+    this->size_ = this->size_ + 1;
+}
+
+void array_list::push_front(int value){
+    if (this->size_==this->capacity_)
+        increase_capacity();
+    
+    for (unsigned int i = this->size_; i>0; --i)
+        data[i] = data[i-1];
+    
+    data[0] = value;
+
     this->size_ = this->size_ + 1;
 }
