@@ -157,3 +157,52 @@ int linked_list::back(){
 int linked_list::front(){
     return this->head->value;
 }
+
+bool linked_list::remove(int value){
+    int_node *current = this->head;
+    for (unsigned int i = 0; i<this->size_; i++){
+        if(current->value==value){
+            current->prev->next = current->next;
+            current->next->prev = current->prev;
+            delete current;
+            this->size_--;
+            return true;
+        }
+        current = current->next;
+    }
+    return false;
+}
+
+int linked_list::find(int value){
+    int_node *current = this->head;
+    for (unsigned int i = 0; i<this->size_; i++){
+        if(current->value==value)
+            return i;
+        current = current->next;
+    }
+
+    return -1;
+}
+
+int linked_list::count(int value){
+    int ocorrencias = 0;
+
+    int_node *current = this->head;
+    while(current!=nullptr){
+        if(current->value==value)
+            ocorrencias++;
+        current = current->next;
+    }
+    return ocorrencias;
+}
+
+int linked_list::sum(){
+    int soma = 0;
+
+    int_node *current = this->head;
+    while(current!=nullptr){
+        soma = soma + current->value;
+        current = current->next;
+    }
+    return soma;
+}

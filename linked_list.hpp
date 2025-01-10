@@ -29,10 +29,10 @@ public:
     void pop_front();
     int back();
     int front();
-    //bool remove(int value);
-    //int find(int value);
-    //int count(int value);
-    //int sum();
+    bool remove(int value);
+    int find(int value);
+    int count(int value);
+    int sum();
 };
 
 #endif // __ARRAY_LIST_IFRN__
