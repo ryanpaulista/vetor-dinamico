@@ -24,6 +24,37 @@ unsigned int linked_list::size() const{
     return this->size_;
 }
 
+bool linked_list::insert_at(unsigned int index, int value){
+    if (index>size_)
+        return false;
+
+    if (index==0){
+        push_front(value);
+        return true;
+    }
+
+    if (index==size_){
+        push_back(value);
+        return true;
+    }
+
+    int_node *new_node = new int_node;
+    int_node *current = this->head;
+
+    for (unsigned int i = 0; i<(index-1); i++)
+        current = current->next;
+
+    new_node->value = value;
+    new_node->next = current->next;
+    new_node->prev = current;
+
+    current->next->prev = new_node;
+    current->next = new_node;
+    
+    this->size_++;
+    return true;
+}
+
 int linked_list::get_at(unsigned int index){
     if (index>size_ || index<0)
         return -1;

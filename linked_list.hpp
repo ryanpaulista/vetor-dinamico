@@ -15,19 +15,24 @@ public:
     ~linked_list();
 
     unsigned int size() const;
-    // unsigned int capaxity();
+    // unsigned int capacity();
     // double percent_occupied(); 
 
-    //bool insert_at(unsigned int index, int value);
+    bool insert_at(unsigned int index, int value);
     //bool remove_at(unsigned int index);
     int get_at(unsigned int index);
 
+    //void clear();
     void push_front(int value);
     void push_back(int value);
     void pop_back();
     void pop_front();
     int back();
     int front();
+    //bool remove(int value);
+    //int find(int value);
+    //int count(int value);
+    //int sum();
 };
 
 #endif // __ARRAY_LIST_IFRN__
