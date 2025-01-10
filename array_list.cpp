@@ -2,9 +2,10 @@
 #include <iostream>       
 
 // Construtor
-array_list::array_list(unsigned int initial_capacity)
-    : size_(0), capacity_(initial_capacity) {
-    data = new int[capacity_]; // Aloca memória para o array dinâmico
+array_list::array_list(){
+    size_ = 0; 
+    capacity_ = 100; 
+    data = new int[100]; // Aloca memória para o array dinâmico
 }
 
 // Destrutor
@@ -59,11 +60,11 @@ bool array_list::insert_at(unsigned int index, int value){
 
 // Remove o elemento do indice index
 bool array_list::remove_at(unsigned int index){
-    if(this->size_==0){
+    if(this->size_==0 || index>=this->size_){
         return false;
     }
-    for (unsigned int i = index; i<this->size_-1; i++)  //O(n)
-        data[i] = data[i+1];
+    for (unsigned int i = index + 1; i < this->size_; ++i) 
+        this->data[i - 1] = this->data[i];
     
     this->size_--;
     return true;
@@ -74,13 +75,21 @@ int array_list::get_at(unsigned int index){
     return data[index];
 }
 
+// Remove todos os elementos, deixando o vetor no estado inicial
+void array_list::clear(){
+    delete[] data;
+    size_ = 0; 
+    capacity_ = 100; 
+    data = new int[100];
+}
+
 // Irá adicionar no final do array um valor
 void array_list::push_back(int value){
     if (this->size_==this->capacity_)
         increase_capacity();
     
     this->data[this->size_] = value;
-    this->size_ = this->size_ + 1;
+    this->size_++;
 }
 
 // Irá adicionar no inicio do array um elemento
@@ -125,6 +134,28 @@ int array_list::back(){
 // Irá retornar o primeiro elemento do array
 int array_list::front(){
     return data[0];
+}
+
+//Remove todas as ocorrencias do valor caso esteja presente no vetor 
+bool array_list::remove(int value){
+    if(this->size_==0)
+        return false;
+
+    bool removed = false; 
+
+    for(unsigned int i=0; i<this->size_;){
+        if (data[i]==value){                                //O(n²)
+            for(unsigned int j=i; j<this->size_; j++)
+                data[i] = data[i+1];
+            this->size_--;
+            removed = true;
+        } else{
+            ++i;
+        }
+    }
+
+    return removed;
+
 }
 
 // Retorna a quantidade de ocorrencias de um valor

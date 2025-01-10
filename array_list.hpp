@@ -10,7 +10,7 @@ private:
 
 public:
     // Construtor e destrutor
-    array_list(unsigned int initial_capacity = 100);
+    array_list();
     ~array_list();
 
     // Métodos básicos
@@ -22,12 +22,14 @@ public:
     bool remove_at(unsigned int index);// Remove o elemento do indice index
     int get_at(unsigned int index);    // Retorna o elemento do indice escolhido
     
+    void clear();
     void push_back(int value);         // Adiciona um elemento no final do array
     void push_front(int value);        // Adiciona um elemento no inicio do array
     bool pop_back();                   // Remove o último elemento
     bool pop_front();                  // Remove o primeiro elemento
     int back();                        // Retorna o último elemento
     int front();                       // Retorna o primeiro elemento 
+    bool remove(int value);            // Remove value do vetor caso esteja presente
     int find(int value);               // Retorna o indice do elemento e caso não esteja presente retorna -1
     int count(int value);              // Retorna a quantidade de ocorrencias de um valor 
     int sum();                         // Retorna a soma dos elementos do array
