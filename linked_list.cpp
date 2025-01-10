@@ -55,6 +55,33 @@ bool linked_list::insert_at(unsigned int index, int value){
     return true;
 }
 
+bool linked_list::remove_at(unsigned int index){
+    
+    if (index>(size_-1))
+        return false;
+
+    if (index==0){
+        pop_front();
+        return true;
+    }
+
+    if (index==(size_-1)){
+        pop_back();
+        return true;
+    }
+
+    int_node *current = this->head;
+
+    for (unsigned int i = 0; i<index; i++)
+        current = current->next;
+
+    current->prev->next = current->next;
+    current->next->prev = current->prev;
+    delete current;
+    this->size_--;
+    return true;
+}
+
 int linked_list::get_at(unsigned int index){
     if (index>size_ || index<0)
         return -1;
@@ -120,7 +147,6 @@ void linked_list::pop_front(){
         this->head->prev = nullptr;
         delete to_delete;
     }
-
     this->size_--;
 }
 

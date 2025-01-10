@@ -19,7 +19,7 @@ public:
     // double percent_occupied(); 
 
     bool insert_at(unsigned int index, int value);
-    //bool remove_at(unsigned int index);
+    bool remove_at(unsigned int index);
     int get_at(unsigned int index);
 
     //void clear();
