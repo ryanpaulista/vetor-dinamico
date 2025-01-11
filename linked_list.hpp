@@ -22,7 +22,7 @@ public:
     bool remove_at(unsigned int index);
     int get_at(unsigned int index);
 
-    //void clear();
+    void clear();
     void push_front(int value);
     void push_back(int value);
     void pop_back();

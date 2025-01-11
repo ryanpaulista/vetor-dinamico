@@ -15,6 +15,7 @@ linked_list::~linked_list(){
         int_node *proximo = current->next;
         delete current;
         current = proximo;
+        this->size_--;
     }
     this->head = nullptr;
     this->tail = nullptr;
@@ -90,6 +91,18 @@ int linked_list::get_at(unsigned int index){
     for (unsigned int i = 0; i<index; i++)
         current = current->next;
     return current->value;
+}
+
+void linked_list::clear(){
+    int_node *current = this->head;
+    while(current!=nullptr){
+        int_node *proximo = current->next;
+        delete current;
+        current = proximo;
+        this->size_--;
+    }
+    this->head = nullptr;
+    this->tail = nullptr;
 }
 
 void linked_list::push_front(int value){

@@ -66,6 +66,7 @@ bool array_list::remove_at(unsigned int index){
     for (unsigned int i = index + 1; i < this->size_; ++i) 
         this->data[i - 1] = this->data[i];
     
+    this->data[this->size_-1]=0;
     this->size_--;
     return true;
 }
