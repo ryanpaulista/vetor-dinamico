@@ -7,7 +7,7 @@ Para ver todos os métodos das respectivas classes veja os arquivos de cabeçalh
 # Como realizar os testes?
 Para realizar testes basta apenas compilar o arquivo de teste juntamente com o arquivo da classe, por exemplo:\
 "g++ -Wall arquivo-teste.cpp -o arquivo-teste array_list.cpp"\
-"g++ -Wall arquivo-teste.cpp -o arquivo-teste linked_list.cpp"\
+"g++ -Wall arquivo-teste.cpp -o arquivo-teste linked_list.cpp"
 
 Para usar os arquivos de testes já existentes, é necessário somente executar o comando:\
     "./test-pushback-linked-list03 < ./tests/push/e1.txt" *os arquivos de valores para teste são: e1.txt, e2.txt ... e14.txt.
