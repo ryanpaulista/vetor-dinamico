@@ -4,8 +4,8 @@
 // Construtor
 array_list::array_list(){
     size_ = 0; 
-    capacity_ = 100; 
-    data = new int[100]; // Aloca memória para o array dinâmico
+    capacity_ = 8; 
+    data = new int[8]; // Aloca memória para o array dinâmico
 }
 
 // Destrutor
@@ -15,12 +15,12 @@ array_list::~array_list() {
 
 // Caso o size_ seja igual ao capacity_ será chamada e irá aumentar o tamanho do array
 void array_list::increase_capacity(){
-    int * new_data = new int[this->capacity_+100];
+    int * new_data = new int[this->capacity_+1000];
     for (unsigned int i=0; i<this->size_; ++i)      // O(n)
         new_data[i] = data[i];
     delete [] this->data;
     this->data = new_data;
-    this->capacity_ = this->capacity_+100;
+    this->capacity_ = this->capacity_+1000;
 }
 
 // Retorna o número de elementos armazenados
