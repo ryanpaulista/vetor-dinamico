@@ -3,7 +3,7 @@ Neste trabalho foram desenvolvidas 2 classes: array_list e linked_list\
 array_list é uma classe que cria um vetor utilizando alocação dinâmica e métodos para manipular o array\
 linked_list é uma classe que cria um vetor utilizando lista duplamente ligada e métodos para manipulação
 
-Para ver todos os métodos das respectivas classes basta apenas ver os arquivos de cabeçalho "array_list.hpp" e "linked_list.hpp"
+Para ver todos os métodos das respectivas classes veja os arquivos de cabeçalho "array_list.hpp" e "linked_list.hpp"
 # Como realizar os testes?
 Para realizar testes basta apenas compilar o arquivo de teste juntamente com o arquivo da classe, por exemplo:\
 "g++ -Wall arquivo-teste.cpp -o arquivo-teste array_list.cpp"\
