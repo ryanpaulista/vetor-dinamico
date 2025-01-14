@@ -4,8 +4,8 @@
 // Construtor
 array_list::array_list(){
     size_ = 0; 
-    capacity_ = 8; 
-    data = new int[8]; // Aloca memória para o array dinâmico
+    capacity_ = 1000;     // Caso queira testar com outros valores troque o valor 1000
+    data = new int[1000]; // Caso queira testar com outros valores troque o valor 1000
 }
 
 // Destrutor
@@ -15,12 +15,12 @@ array_list::~array_list() {
 
 // Caso o size_ seja igual ao capacity_ será chamada e irá aumentar o tamanho do array
 void array_list::increase_capacity(){
-    int * new_data = new int[this->capacity_+1000];
+    int * new_data = new int[this->capacity_+1000]; // Caso queira testar com outros valores troque o valor 1000
     for (unsigned int i=0; i<this->size_; ++i)      // O(n)
         new_data[i] = data[i];
     delete [] this->data;
     this->data = new_data;
-    this->capacity_ = this->capacity_+1000;
+    this->capacity_ = this->capacity_+1000; // Caso queira testar com outros valores troque o valor 1000
 }
 
 // Retorna o número de elementos armazenados
@@ -159,7 +159,7 @@ bool array_list::remove(int value){
 
 }
 
-// Retorna a quantidade de ocorrencias de um valor
+// Retorna a quantidade de ocorrencias de value
 int array_list::count(int value){
     int ocorrencias = 0;
 
@@ -171,6 +171,7 @@ int array_list::count(int value){
     return ocorrencias;
 }
 
+// Procura value no array, caso esteja retorna o seu índice caso não retorna -1
 int array_list::find(int value){
     for (unsigned int i = 0; i<this->size_; i++){   //O(n)
         if (value==data[i]){
@@ -181,6 +182,7 @@ int array_list::find(int value){
     return -1;
 }
 
+// Retorna a soma de todos os valores do array
 int array_list::sum(){
     int soma = 0;
     for(unsigned int i = 0; i<this->size_; i++)     //O(n)
