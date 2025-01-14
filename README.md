@@ -12,13 +12,12 @@ Para realizar testes basta apenas compilar o arquivo de teste juntamente com o a
 Para usar os arquivos de testes já existentes, é necessário somente executar o comando:\
     "./test-pushback-linked-list03 < ./tests/push/e1.txt" *os arquivos de valores para teste são: e1.txt, e2.txt ... e14.txt.
 
-- test-pushback-array-list-01 -> Fator de crescimento 10\
-- test-pushback-array-list-02 -> Fator de crescimento 100\
-- test-pushback-array-list-03 -> Fator de crescimento 1000\
-- test-pushback-array-list-04 -> Fator de crescimento *2\
+- test-pushback-array-list-01 -> Fator de crescimento 10
+- test-pushback-array-list-02 -> Fator de crescimento 100
+- test-pushback-array-list-03 -> Fator de crescimento 1000
+- test-pushback-array-list-04 -> Fator de crescimento *2
 
-
-Caso queira testar o array_list com diferentes fatores de crescimento é necessário alterar a capacidade inicial e o fator de crescimento dentro do arquivo array_list.cpp no método increase_capacity() e compilar como explicado no início desta seção.\
+Caso queira testar o array_list com diferentes fatores de crescimento é necessário alterar a capacidade inicial e o fator de crescimento dentro do arquivo array_list.cpp no método increase_capacity() e compilar como explicado no início desta seção.
 
 Iniciando com tamanho 1000 e crescendo de 1000 em 1000:
 ```cpp
