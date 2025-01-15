@@ -9,8 +9,8 @@ Para realizar testes basta apenas compilar o arquivo de teste juntamente com o a
 "g++ -Wall arquivo-teste.cpp -o arquivo-teste array_list.cpp"\
 "g++ -Wall arquivo-teste.cpp -o arquivo-teste linked_list.cpp"
 
-Para usar os arquivos de testes já existentes, é necessário somente executar o comando:\
-    "./test-pushback-linked-list03 < ./tests/push/e1.txt" *os arquivos de valores para teste são: e1.txt, e2.txt ... e14.txt.
+Para usar os arquivos de testes já existentes, execute o comando dentro da pasta testes:\
+    "./test-pushback-linked-list-01 < ./push/e1.txt" *os arquivos de valores para teste são: e1.txt, e2.txt ... e14.txt.
 
 - test-pushback-array-list-01 -> Fator de crescimento 10
 - test-pushback-array-list-02 -> Fator de crescimento 100
