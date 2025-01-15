@@ -1,24 +1,23 @@
 # vetor-dinamico
 Neste trabalho foram desenvolvidas 2 classes: array_list e linked_list\
-array_list é uma classe que cria um vetor utilizando alocação dinâmica e vários métodos para manipular o array\
-linked_list é uma classe que cria um vetor utilizando lista duplamente ligada e vários métodos para manipulação
+array_list é uma classe que cria um vetor utilizando alocação dinâmica e métodos para manipular o array.\
+linked_list é uma classe que cria um vetor utilizando lista duplamente ligada e métodos para manipulação.
 
-Para ver todos os métodos das respectivas classes basta apenas ver os arquivos de cabeçalho "array_list.hpp" e "linked_list.hpp"
+Para ver todos os métodos das respectivas classes veja os arquivos de cabeçalho "array_list.hpp" e "linked_list.hpp".
 # Como realizar os testes?
 Para realizar testes basta apenas compilar o arquivo de teste juntamente com o arquivo da classe, por exemplo:\
 "g++ -Wall arquivo-teste.cpp -o arquivo-teste array_list.cpp"\
-"g++ -Wall arquivo-teste.cpp -o arquivo-teste linked_list.cpp"\
+"g++ -Wall arquivo-teste.cpp -o arquivo-teste linked_list.cpp"
 
 Para usar os arquivos de testes já existentes, é necessário somente executar o comando:\
-    "./test-pushback-linked-list03 < ./tests/push/e1.txt"
+    "./test-pushback-linked-list03 < ./tests/push/e1.txt" *os arquivos de valores para teste são: e1.txt, e2.txt ... e14.txt.
 
-- test-pushback-array-list-01 -> Fator de crescimento 10\
-- test-pushback-array-list-02 -> Fator de crescimento 100\
-- test-pushback-array-list-03 -> Fator de crescimento 1000\
-- test-pushback-array-list-04 -> Fator de crescimento *2\
+- test-pushback-array-list-01 -> Fator de crescimento 10
+- test-pushback-array-list-02 -> Fator de crescimento 100
+- test-pushback-array-list-03 -> Fator de crescimento 1000
+- test-pushback-array-list-04 -> Fator de crescimento *2
 
-
-Caso queira testar o array_list com diferentes fatores de crescimento é necessário alterar a capacidade inicial e o fator de crescimento dentro do arquivo array_list.cpp no método increase_capacity() e compilar como explicado no início desta seção.\
+Caso queira testar o array_list com diferentes fatores de crescimento é necessário alterar a capacidade inicial e o fator de crescimento dentro do arquivo array_list.cpp no método increase_capacity() e compilar como explicado no início desta seção.
 
 Iniciando com tamanho 1000 e crescendo de 1000 em 1000:
 ```cpp
